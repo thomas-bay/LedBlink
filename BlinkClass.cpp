@@ -5,6 +5,7 @@
 Blink::Blink(int IOPort)
 {
   _port = IOPort;
+  pinMode(_port, OUTPUT);
 }
 
 // Adds a state (level) to the Blink class. Use this function during setup to
