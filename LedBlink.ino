@@ -16,7 +16,7 @@ String Version = "LedBlink ver 1.03";
 
 int BlinkTheLed = TRUE;
 
-int LEDStatus;
+int LEDStatusxxx;
 int LoopCounter = 0;
 
 class Version V;
@@ -47,15 +47,15 @@ void setup() {
 
   // Publish the variables and functions
   Particle.function("Led",ledCommand);
-  Particle.variable("LEDStatus", LEDStatus);
+  Particle.variable("LEDStatus", LEDStatusxxx);
   Particle.variable("LoopCounter", LoopCounter);
   Particle.variable("Vers", Version);
   Particle.variable("Blink", BlinkTheLed);
 
   // Wait for something to happen in the serial input
   Serial.begin(9600);
-  while(!Serial.available()) Particle.process();
-  while(Serial.read() != -1);
+//  while(!Serial.available()) Particle.process();
+//  while(Serial.read() != -1);
 
   // Start TCP server and print the WiFi data
   server.begin();
@@ -118,7 +118,7 @@ void loop() {
     client = server.available();
   }
 
-  LEDStatus = BlinkTheLed;
+  LEDStatusxxx = BlinkTheLed;
   // And repeat!
 }
 

@@ -22,8 +22,6 @@ public:
   Blink(int IOPort);
   void AddState(int Period, int level);
   void Action();
-  //int GetState() {return _state;};
-  //char * GetStateStr() {return _statestr[_state];};
   int getCalls() {return _action_calls;};
   void Print();
 };

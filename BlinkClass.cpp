@@ -1,8 +1,7 @@
 #include <Particle.h>
 #include <BlinkClass.h>
 
-// Contructor for Blink class
-Blink::Blink(int IOPort)
+Blink::Blink (int IOPort)
 {
   _port = IOPort;
   pinMode(_port, OUTPUT);
@@ -34,7 +33,7 @@ void Blink::AddState(int Period, int Level)
   ++_num_periods;
   Per = periods;
   Lev = levels;
-}
+};
 
 // NOTE: _nexttime will overrun after 1,5 months in the current implementation and
 // Led will stop blinking.
@@ -49,9 +48,9 @@ void Blink::Action()
     _state_num = (_state_num + 1) % _num_periods;
   }
   ++_action_calls;
-}
+};
 
-void Blink::Print()
+void Blink::Print ()
 {
   // For debugging only
   for (int i=0; i < _num_periods; i++)
